@@ -4,13 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link rel="stylesheet" href="Assets\CSS\style.css">
 </head>
 <body>
-    <h1>hello world</h1>
-    <h2> Aly's test 1,2,3</h2>
-    <button id="testbtn"></button>
+  <div class="hero-section">
+    <div class="hero-section-text">
+      <h1>Midwest National Parks</h1>
+      <h5>Explore the 'Bold North'</h5>
+    </div>
+  </div>
     <div data-closable="fade-out" class="todo-list-card card">
+        <div class="card-divider">
+          <h3>What activities are you looking for?</h3>
+        </div>
+        <div class="callout" id="switch-toggle-all">
+
+          <div class="switch-toggle-wrapper">
+            <div class="switch">
+              <input class="switch-input" id="exampleSwitch1" type="checkbox" name="exampleSwitch" data-toggle-all>
+              <label class="switch-paddle" for="exampleSwitch1">
+                <span class="show-for-sr">Toggle All</span>
+              </label>
+            </div>
+            <span>Toggle All</span>
+          </div>
+        
+          <hr />
+        
+          <div class="switch-toggle-wrapper">
+            <div class="switch">
+              <input class="switch-input" id="exampleSwitch2" type="checkbox" name="exampleSwitch2">
+              <label class="switch-paddle" for="exampleSwitch2">
+                <span class="show-for-sr">Automatic Updates</span>
+              </label>
+            </div>
+            <span>Automatic Updates</span>
+          </div>
+        
+          <div class="switch-toggle-wrapper">
+            <div class="switch">
+              <input class="switch-input" id="exampleSwitch3" type="checkbox" name="exampleSwitch3">
+              <label class="switch-paddle" for="exampleSwitch3">
+                <span class="show-for-sr">Sync Daily</span>
+              </label>
+            </div>
+            <span>Sync Daily</span>
+          </div>
+        
+          <div class="switch-toggle-wrapper">
+            <div class="switch">
+              <input class="switch-input" id="exampleSwitch4" type="checkbox" name="exampleSwitch4">
+              <label class="switch-paddle" for="exampleSwitch4">
+                <span class="show-for-sr">Location</span>
+              </label>
+            </div>
+            <span>Location</span>
+          </div>
+        
+          <div class="switch-toggle-wrapper">
+            <div class="switch">
+              <input class="switch-input" id="exampleSwitch5" type="checkbox" name="exampleSwitch5">
+              <label class="switch-paddle" for="exampleSwitch5">
+                <span class="show-for-sr">push notifications</span>
+              </label>
+            </div>
+            <span>Push Notifications</span>
+          </div>
+          <input type="submit" class="button submit-button" value="Submit">
+        </div>
+        </div>
+
+        <!-- <div class="card-section">
+          <ul>
+            <li><input id="item1" type="checkbox"></input><label for="item1"></label>Item 1</li>
+            <li><input id="item2" type="checkbox"></input><label for="item2"></label>Item 2</li>
+            <li><input id="item3" type="checkbox"></input><label for="item3"></label>Item 3</li>
+            <li><input id="item4" type="checkbox"></input><label for="item4"></label>Item 4</li>
+            <li><input id="item5" type="checkbox"></input><label for="item5"></label>Item 5</li>
+            <li><input id="item6" type="checkbox"></input><label for="item6"></label>Item 6</li>
+          </ul>
+          <button type="button" class="primary button expanded search-button">
+            Search
+          </button>
+        </div>
+      </div> -->
+</div> 
+<div class="card">
+  <img class="card-img" src="https://placehold.it/350x300" alt="header" />
+  <div class="card-info">
+  <h1 class="card-title">Card Title</h1>
+  <div class="card-icon">6</div>
+  <p class="card-author">Author Name</p>
+  <p class="card-stats">6 <img src="https://placehold.it/20" alt="hi" /> 6 <img src="https://placehold.it/20" alt="hi" /></p>
+  </div>
+</div>
+
+
+  
+    <div class="holy-grail-middle">
+      <h3>Content</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias mollitia debitis at atque temporibus ratione molestiae id eos, cupiditate numquam dolor vero totam, quisquam libero voluptas. Animi ipsa cumque, tempore.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias mollitia debitis at atque temporibus ratione molestiae id eos, cupiditate numquam dolor vero totam, quisquam libero voluptas. Animi ipsa cumque, tempore.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias mollitia debitis at atque temporibus ratione molestiae id eos, cupiditate numquam dolor vero totam, quisquam libero voluptas. Animi ipsa cumque, tempore.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias mollitia debitis at atque temporibus ratione molestiae id eos, cupiditate numquam dolor vero totam, quisquam libero voluptas. Animi ipsa cumque, tempore.</p>
+    </div>
+ 
+  </div>
+  
+
+
+
+
+
+    <!-- <div data-closable="fade-out" class="todo-list-card card">
         <div class="card-divider">
           <h3>To Do List</h3>
           <button id="testbtn" class="close-button" data-close>Test Button</button>
@@ -25,13 +132,12 @@
             <li><input id="item6" type="checkbox"></input><label for="item6"></label>Item 6</li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="Assets/JS/script.js"></script>
- yer is the best
 </body>
 </html>
