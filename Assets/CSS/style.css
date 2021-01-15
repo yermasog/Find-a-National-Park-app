@@ -1,6 +1,6 @@
 
 .hero-section {
-  background: url("https://static.pexels.com/photos/248064/pexels-photo-248064.jpeg") 50% no-repeat;
+  background: url("../Images/HeroIMG.jpg") 50% no-repeat;
   background-size: cover;
   height: 60vh;
   text-align: center;
@@ -17,9 +17,8 @@
 
 .hero-section .hero-section-text {
   color: #fefefe;
-  text-shadow: 1px 1px 2px #0a0a0a;
+  text-shadow: 1px 1px 2px #0a0a0a; 
 }
-
 
 .switch-toggle-wrapper {
   display: -webkit-flex;
