@@ -14,9 +14,9 @@
 
 
 
-$("#test-button").on("click", function(event) {
+$("#mnSwitch").on("click", function(event) {
   event.preventDefault();
-  var searchterm = ["MN", "WI", "SD", "ND"] ;
+  var searchterm = ["MN"] ;
   var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm 
 + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
 
@@ -28,9 +28,7 @@ $("#test-button").on("click", function(event) {
     success: function(response){
       console.log(response);
     }
-
   }
-
   $.ajax(settings).then(function(response){
       console.log(response);
 
@@ -40,10 +38,99 @@ $("#test-button").on("click", function(event) {
       console.log("LOOK!!!");
       console.log(response.data);
 
-
-
+})
 
 })
+// Wisconsin
+
+$("#wiSwitch").on("click", function(event) {
+  event.preventDefault();
+  var searchterm = ["WI"] ;
+  var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm 
++ "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
+
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: queryURL,
+    method: "GET",
+    success: function(response){
+      console.log(response);
+    }
+  }
+  $.ajax(settings).then(function(response){
+      console.log(response);
+
+      var park1 = $("#park1");
+      park1.text(response.data[3].fullName);
+      $("#park1").append(park1)
+      console.log("LOOK!!!");
+      console.log(response.data);
+
+})
+
+})
+
+// North Dakota
+
+$("#ndSwitch").on("click", function(event) {
+  event.preventDefault();
+  var searchterm = ["ND"] ;
+  var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm 
++ "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
+
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: queryURL,
+    method: "GET",
+    success: function(response){
+      console.log(response);
+    }
+  }
+  $.ajax(settings).then(function(response){
+      console.log(response);
+
+      var park1 = $("#park1");
+      park1.text(response.data[3].fullName);
+      $("#park1").append(park1)
+      console.log("LOOK!!!");
+      console.log(response.data);
+
+})
+
+})
+
+// South Dakota
+
+$("#sdSwitch").on("click", function(event) {
+  event.preventDefault();
+  var searchterm = ["SD"] ;
+  var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm 
++ "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
+
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: queryURL,
+    method: "GET",
+    success: function(response){
+      console.log(response);
+    }
+  }
+  $.ajax(settings).then(function(response){
+      console.log(response);
+
+      var park1 = $("#park1");
+      park1.text(response.data[3].fullName);
+      $("#park1").append(park1)
+      console.log("LOOK!!!");
+      console.log(response.data);
+
+})
+
+})
+
 
 // true|false for state switches
 // if/else on click event checking for toggles
@@ -52,5 +139,3 @@ $("#test-button").on("click", function(event) {
 // WI array 0 4 14 
 //  ND array 2 6 15
 // SD array 1 5 8 11 17
-
-})
