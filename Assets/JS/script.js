@@ -13,9 +13,9 @@
 
 // Minnesota
 
-$("#mnSwitch").on("click", function (event) {
+$(".button").on("click", function (event) {
   event.preventDefault();
-  var searchterm = ["MN"];
+  var searchterm = $(this).attr("id")
   var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm
     + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
 
@@ -25,49 +25,51 @@ $("#mnSwitch").on("click", function (event) {
     url: queryURL,
     method: "GET",
     success: function (response) {
-      console.log(response);
+      // console.log(response);
     }
   }
   $.ajax(settings).then(function (response) {
     console.log(response);
 
-    var photo = response.data[0].images[0].url;
-    var name = response.data[0].fullName;
-    var description = response.data[0].description;
-    var url = response.data[0].directionsUrl;
+    for (let i = 0; i < (response.total); i++) {
 
-    // console.log(name)
-    // console.log(description)
-    // console.log(url)
-    // console.log(photo)
-    var section = $(".posts-list");
+      var photo = response.data[(0 + i)].images[0].url;
+      var name = response.data[(0 + i)].fullName;
+      var description = response.data[(0 + i)].description;
+      var url = response.data[(0 + i)].directionsUrl;
+
+      // console.log(name)
+      // console.log(description)
+      // console.log(url)
+      // console.log(photo)
+      var section = $(".posts-list");
       var bigDiv = $("<div class='post-item'>");
-        var photoDiv = $("<a class='post-thumbnail'>")
-            var imageTag = $("<img>")
-        var postText = $("<div class='post-text'>")
-            var postTitle = $("<h3 class='post-title'>")
-            var postSummaryDiv = $("<div class='post-summary'>")
-                var postSummaryP = $("<p>")
-                    var link = $("<a class='post-read-more'>")
-  
-    link.attr("href", url);
-    link.text("Learn More");
-    postSummaryP.text(description);
-    postTitle.text(name);
-    imageTag.attr('src', photo);
+      var photoDiv = $("<a class='post-thumbnail'>")
+      var imageTag = $("<img>")
+      var postText = $("<div class='post-text'>")
+      var postTitle = $("<h3 class='post-title'>")
+      var postSummaryDiv = $("<div class='post-summary'>")
+      var postSummaryP = $("<p>")
+      var link = $("<a class='post-read-more'>")
 
+      link.attr("href", url);
+      link.text("Learn More");
+      postSummaryP.text(description);
+      postTitle.text(name);
+      imageTag.attr('src', photo);
 
-    postSummaryP.append(link);
-    postSummaryDiv.append(postSummaryP);
-    postText.append(postTitle);
-    photoDiv.append(imageTag);
-    bigDiv.append(photoDiv);
-    postText.append(postSummaryDiv);
-    bigDiv.append(postText);
+      postSummaryP.append(link);
+      postSummaryDiv.append(postSummaryP);
+      postText.append(postTitle);
+      photoDiv.append(imageTag);
+      bigDiv.append(photoDiv);
+      postText.append(postSummaryDiv);
+      bigDiv.append(postText);
 
-    section.append(bigDiv);
+      section.append(bigDiv);
+    }
   })
-    
+
 })
 
 // Wisconsin
