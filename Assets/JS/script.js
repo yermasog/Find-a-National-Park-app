@@ -71,23 +71,30 @@ $(".submit-button").on("click", function (event) {
       section.append(bigDiv);
 
       // use the lat and lon from NPS API to feed into open weather API to get weather info
-      // var lat = respponse.data[0].latitude;
-      // var lon = response.data[0].longitude;
+      var lat = response.data[0].latitude;
+      var lon = response.data[0].longitude;
 
-      // var weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=18687cf1c7c1d78e93e8472d225dee33&units=imperial"
-      // $.ajax({
-      //   url: weatherURL,
-      //   method: "GET"
-      // }).then(function (weather) {
-      //   console.log(weather)
+      var weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=18687cf1c7c1d78e93e8472d225dee33&units=imperial"
+      $.ajax({
+        url: weatherURL,
+        method: "GET"
+      }).then(function (weather) {
+        console.log(weather)
 
-      //   var temp = weather.current.temp 
-      //   var icon = weather.weather[0].id
-      //   var dailyicon = "https://openweathermap.org/img/w/" + icon + ".png"
-      //   var weatherDes = weather.weather[0].description
+        var temp = weather.main.temp 
+        var icon = weather.weather[0].icon
+        var dailyicon = "https://openweathermap.org/img/w/" + icon + ".png"
+        var weatherDes = weather.weather[0].description
+        console.log(temp)
+        console.log(icon)
+        console.log(dailyicon)
+        console.log(weatherDes)
 
 
-      // })
+
+
+
+      })
 
     }
 
