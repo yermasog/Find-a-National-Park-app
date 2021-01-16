@@ -1,6 +1,17 @@
 
 body {
-  background-color: lightblue;
+  background-color: skyblue;
+  
+}
+
+.btn {
+  border-radius: 5000px;
+  background-color: brown
+  
+  
+}
+#mainButtons {
+  background-color: mediumseagreen;
 }
 
 .hero-section {
@@ -323,7 +334,7 @@ body {
   font-size: 0.875rem;
 }
 
-.posts-panel .post-item .post-read-more .fa {
+/* .posts-panel .post-item .post-read-more .fa {
   padding: 0 0.3125rem;
 }
 
@@ -443,5 +454,5 @@ body {
   .posts-panel .posts-list .post-summary {
     font-size: 0.875rem;
   }
-}
+} */
 
