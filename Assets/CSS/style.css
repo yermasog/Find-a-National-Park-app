@@ -98,7 +98,7 @@ body {
 
 
 .posts-panel {
-  max-width: 75rem;
+  /* max-width: 75rem; */
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -445,3 +445,10 @@ body {
   }
 }
 
+.test {
+  width: 500px;
+}
+
+.test2 {
+  margin-top: 0px;
+}
