@@ -13,23 +13,31 @@
 
 
 $(".submit-button").on("click", function (event) {
-  alert("testing")
+  // alert("testing")
   event.preventDefault();
-  event.stopPropagation();
+  // event.stopPropagation();
   
   var searchterm = $(this).attr("id")
   var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm
     + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
 
-  // var settings = {
-  //   async: true,
-  //   crossDomain: true,
-  //   url: queryURL,
-  //   method: "GET",
-  //   success: function (response) {
-  //     console.log(response);
-  //   }
-  // }
+    preventDoubleSubmission = function(){
+      $(this).on("submit", function(event){
+        var $form = $(this);
+    
+        if ($form.data("submitted") === true){
+          event.preventDefault();
+        } else {
+          $form.data("submitted", true);
+        }
+      })
+    
+      return this;
+    }
+
+
+
+
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -107,19 +115,19 @@ $(".submit-button").on("click", function (event) {
 
 
 
-preventDoubleSubmission = function(){
-  $(this).on("submit", function(event){
-    var $form = $(this);
+// preventDoubleSubmission = function(){
+//   $(this).on("submit", function(event){
+//     var $form = $(this);
 
-    if ($form.data("submitted") === true){
-      event.preventDefault();
-    } else {
-      $form.data("submitted", true);
-    }
-  })
+//     if ($form.data("submitted") === true){
+//       event.preventDefault();
+//     } else {
+//       $form.data("submitted", true);
+//     }
+//   })
 
-  return this;
-}
+//   return this;
+// }
 
 // // true|false for state switches
 // stopPropagation to prevent button repeats
