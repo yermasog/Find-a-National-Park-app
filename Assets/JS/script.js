@@ -63,8 +63,6 @@ $(".submit-button").on("click", function (event) {
       var cardSection = $("<div class='card-section'>");
       var temperature = $("<p>")
       var currentConditions = $("<p>");
-    
-      
 
       cardDiv.append(image);
       cardSection.append(currentConditions);
@@ -76,8 +74,8 @@ $(".submit-button").on("click", function (event) {
       bigDiv.append(weatherCard);
 
       // use the lat and lon from NPS API to feed into open weather API to get weather info
-      var lat = response.data[0].latitude;
-      var lon = response.data[0].longitude;
+      var lat = response.data[(0 + i)].latitude;
+      var lon = response.data[(0 + i)].longitude;
 
       var weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=18687cf1c7c1d78e93e8472d225dee33&units=imperial"
       $.ajax({
