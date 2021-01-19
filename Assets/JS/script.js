@@ -1,32 +1,9 @@
-// var searchterm = "yellowstone";
-// var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + searchterm 
-// + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
-
-// $("testbtn").on("click", function(){
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//       }).then(function(response){
-//         console.log(response);})
-// })
-
-
-
 $(".submit-button").on("click", function (event) {
   event.preventDefault();
   var searchterm = $(this).attr("id")
   var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm
     + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
 
-  // var settings = {
-  //   async: true,
-  //   crossDomain: true,
-  //   url: queryURL,
-  //   method: "GET",
-  //   success: function (response) {
-  //     console.log(response);
-  //   }
-  // }
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -45,7 +22,7 @@ $(".submit-button").on("click", function (event) {
       // console.log(url)
       // console.log(photo)
       var section = $(".posts-list");
-      var bigDiv = $("<div class='post-item'>");
+      var bigDiv = $("<div class='post-item flex-container fullwidth'>");
       var photoDiv = $("<a class='post-thumbnail'>")
       var imageTag = $("<img>")
       var postText = $("<div class='post-text'>")
@@ -90,31 +67,28 @@ $(".submit-button").on("click", function (event) {
         console.log(dailyicon)
         console.log(weatherDes);
 
+        var weatherCard = $("<div class='weather-card'>");
+        var columnDiv = $("<div class='small-4 columns'>");
+        var cardDiv = $("<div class='card, style=width: 300px'>");
+        var cardDivider = $("<div class='card-divider'>");
+        var currentWeather = $("<h6>");
+        var image = $("<img>") 
+        var cardSection = $("<div class='card-section'>");
+        var temperature = $("<p>")
+        var currentConditions = $("<p>");
       
-        // var flexContainer = $("<div class='post-item flex-container fullwidth'>");
-        // var weatherCard = $("<div class='weather-card'>");
-        // var columnDiv = $("<div class='small-4 columns'>");
-        // var cardDiv = $("<div class='card, style=width: 300px'>");
-        // var cardDivider = $("<div class='card-divider'>");
-        // var currentWeather = $("<h6>");
-        // var image = $("<img>") 
-        // var cardSection = $("<div class='card-section'>");
-        // var temperature = $("<p>")
-        // var currentConditions = $("<p>");
-       
+        currentConditions.text(weatherDes);
+        temperature.text("Temperature: " + temp +  " F");
+        image.attr(src=dailyicon);
 
-        // currentConditions.text(weatherDes);
-        // temperature.text("Temperature: " + temp +  " F");
-        // image.attr(src=dailyicon);
-
-        // cardDiv.append(image);
-        // cardSection.append(currentConditions);
-        // cardSection.append(temperature);
-        // cardDiv.append(cardSection);
-        // cardDiv.append(cardDivider);
-        // columnDiv.append(cardDiv);
-        // weatherCard.append(columnDiv);
-        // flexContainer.append(weatherCard);
+        cardDiv.append(image);
+        cardSection.append(currentConditions);
+        cardSection.append(temperature);
+        cardDiv.append(cardSection);
+        cardDiv.append(cardDivider);
+        columnDiv.append(cardDiv);
+        weatherCard.append(columnDiv);
+        bigDiv.append(weatherCard);
 
 
 
