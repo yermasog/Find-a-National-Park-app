@@ -68,7 +68,6 @@ console.log(queryURL)
 
       currentWeather.text("Current Weather Conditions:")
       currentWeather.css('font-weight', 'bold');
-      cardDiv.css('width', '300px');
       cardDiv.append(image);
       cardSection.append(temperature);
       cardSection.append(currentConditions);
