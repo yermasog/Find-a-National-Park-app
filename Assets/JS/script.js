@@ -15,26 +15,12 @@
 $(".submit-button").on("click", function (event) {
   // alert("testing")
   event.preventDefault();
-  // event.stopPropagation();
+  $(this).attr("disabled", true);
+  $(this).val("submitted");
   
   var searchterm = $(this).attr("id")
   var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm
     + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
-
-    preventDoubleSubmission = function(){
-      $(this).on("submit", function(event){
-        var $form = $(this);
-    
-        if ($form.data("submitted") === true){
-          event.preventDefault();
-        } else {
-          $form.data("submitted", true);
-        }
-      })
-    
-      return this;
-    }
-
 
 
 
@@ -138,4 +124,17 @@ $(".submit-button").on("click", function (event) {
 
 })
 
+// jQuery.fn.preventDoubleSubmission = function(){
+//   $(this).on("submit", function(event){
+//     var $form = $(this);
+//     console.log(this);
 
+//     if ($form.data("submitted") === true){
+//       event.preventDefault();
+//     } else {
+//       $form.data("submitted", true);
+//     }
+//   })
+
+//   return this;
+// }
