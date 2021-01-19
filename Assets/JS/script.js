@@ -99,8 +99,33 @@ $(".submit-button").on("click", function (event) {
         console.log(temp)
         console.log(icon)
         console.log(dailyicon)
-        console.log(weatherDes)
+        console.log(weatherDes);
 
+      
+        // var flexContainer = $("<div class='post-item flex-container fullwidth'>");
+        // var weatherCard = $("<div class='weather-card'>");
+        // var columnDiv = $("<div class='small-4 columns'>");
+        // var cardDiv = $("<div class='card, style=width: 300px'>");
+        // var cardDivider = $("<div class='card-divider'>");
+        // var currentWeather = $("<h6>");
+        // var image = $("<img>") 
+        // var cardSection = $("<div class='card-section'>");
+        // var temperature = $("<p>")
+        // var currentConditions = $("<p>");
+       
+
+        // currentConditions.text(weatherDes);
+        // temperature.text("Temperature: " + temp +  " F");
+        // image.attr(src=dailyicon);
+
+        // cardDiv.append(image);
+        // cardSection.append(currentConditions);
+        // cardSection.append(temperature);
+        // cardDiv.append(cardSection);
+        // cardDiv.append(cardDivider);
+        // columnDiv.append(cardDiv);
+        // weatherCard.append(columnDiv);
+        // flexContainer.append(weatherCard);
 
 
 
@@ -114,26 +139,3 @@ $(".submit-button").on("click", function (event) {
 })
 
 
-
-// preventDoubleSubmission = function(){
-//   $(this).on("submit", function(event){
-//     var $form = $(this);
-
-//     if ($form.data("submitted") === true){
-//       event.preventDefault();
-//     } else {
-//       $form.data("submitted", true);
-//     }
-//   })
-
-//   return this;
-// }
-
-// // true|false for state switches
-// stopPropagation to prevent button repeats
-// // if/else on click event checking for toggles
-// // if true return state results from array (data[0]) for loop
-// // MN array 3 9 13 16
-// // WI array 0 4 14 
-// //  ND array 2 6 15
-// // SD array 1 5 8 11 17
