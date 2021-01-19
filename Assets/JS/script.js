@@ -1,5 +1,12 @@
+$("#allBtn").on("click", function(){
+  $("#MN").click();
+  $("#WI").click();
+  $("#ND").click();
+  $("#SD").click();
+
+})
+
 $(".submit-button").on("click", function (event) {
-  // alert("testing")
   event.preventDefault();
   $(this).attr("disabled", true);
   $(this).val("submitted");
@@ -7,6 +14,7 @@ $(".submit-button").on("click", function (event) {
   var searchterm = $(this).attr("id")
   var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm
     + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
+    
 console.log(queryURL)
   $.ajax({
     url: queryURL,
