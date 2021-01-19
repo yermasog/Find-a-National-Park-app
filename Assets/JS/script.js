@@ -3,15 +3,17 @@ $(".submit-button").on("click", function (event) {
   event.preventDefault();
   $(this).attr("disabled", true);
   $(this).val("submitted");
-  
+
   var searchterm = $(this).attr("id")
   var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm
     + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
-
+console.log(queryURL)
   $.ajax({
     url: queryURL,
     method: "GET"
-  }).then(function (response) {
+  }).then(function(response){parkCreation(response)})
+
+  async function parkCreation (response) {
     console.log(response);
 
     for (let i = 0; i < (response.total); i++) {
@@ -56,19 +58,23 @@ $(".submit-button").on("click", function (event) {
       // var flex = $("<div class ='post-item flex-container fullwidth'>")
       var weatherCard = $("<div class='weather-card'>");
       var columnDiv = $("<div class='small-4 columns'>");
-      var cardDiv = $("<div class='card, style=width: 300px'>");
+      var cardDiv = $("<div class='card'>");
       var cardDivider = $("<div class='card-divider'>");
       var currentWeather = $("<h6>");
-      var image = $("<img>") 
+      var image = $("<img>")
       var cardSection = $("<div class='card-section'>");
       var temperature = $("<p>")
       var currentConditions = $("<p>");
 
+      currentWeather.text("Current Weather Conditions:")
+      currentWeather.css('font-weight', 'bold');
+      cardDiv.css('width', '300px');
       cardDiv.append(image);
-      cardSection.append(currentConditions);
       cardSection.append(temperature);
-      cardDiv.append(cardSection);
+      cardSection.append(currentConditions);
+      cardDivider.append(currentWeather);
       cardDiv.append(cardDivider);
+      cardDiv.append(cardSection);
       columnDiv.append(cardDiv);
       weatherCard.append(columnDiv);
       bigDiv.append(weatherCard);
@@ -78,13 +84,13 @@ $(".submit-button").on("click", function (event) {
       var lon = response.data[(0 + i)].longitude;
 
       var weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=18687cf1c7c1d78e93e8472d225dee33&units=imperial"
-      $.ajax({
+      await $.ajax({
         url: weatherURL,
         method: "GET"
       }).then(function (weather) {
         console.log(weather)
 
-        var temp = weather.main.temp 
+        var temp = weather.main.temp
         var icon = weather.weather[0].icon
         var dailyicon = "https://openweathermap.org/img/w/" + icon + ".png"
         var weatherDes = weather.weather[0].description
@@ -93,10 +99,9 @@ $(".submit-button").on("click", function (event) {
         console.log(dailyicon)
         console.log(weatherDes);
 
-        
         currentConditions.text(weatherDes);
-        temperature.text("Temperature: " + temp +  " F");
-        image.attr(src = dailyicon);
+        temperature.text("Temperature: " + temp + " °F");
+        image.attr("src", dailyicon);
 
 
 
@@ -104,6 +109,6 @@ $(".submit-button").on("click", function (event) {
 
     }
 
-  })
+  }
 
 })
