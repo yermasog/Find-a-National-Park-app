@@ -42,7 +42,7 @@ $(".submit-button").on("click", function (event) {
       // console.log(url)
       // console.log(photo)
       var section = $(".posts-list");
-      var bigDiv = $("<div class='post-item'>");
+      var bigDiv = $("<div class='post-item flex-container fullwidth'>");
       var photoDiv = $("<a class='post-thumbnail'>")
       var imageTag = $("<img>")
       var postText = $("<div class='post-text'>")
@@ -88,30 +88,28 @@ $(".submit-button").on("click", function (event) {
         console.log(weatherDes);
 
       
-        // var flexContainer = $("<div class='post-item flex-container fullwidth'>");
-        // var weatherCard = $("<div class='weather-card'>");
-        // var columnDiv = $("<div class='small-4 columns'>");
-        // var cardDiv = $("<div class='card, style=width: 300px'>");
-        // var cardDivider = $("<div class='card-divider'>");
-        // var currentWeather = $("<h6>");
-        // var image = $("<img>") 
-        // var cardSection = $("<div class='card-section'>");
-        // var temperature = $("<p>")
-        // var currentConditions = $("<p>");
-       
+        var weatherCard = $("<div class='weather-card'>");
+        var columnDiv = $("<div class='small-4 columns'>");
+        var cardDiv = $("<div class='card, style=width: 300px'>");
+        var cardDivider = $("<div class='card-divider'>");
+        var currentWeather = $("<h6>");
+        var image = $("<img>") 
+        var cardSection = $("<div class='card-section'>");
+        var temperature = $("<p>")
+        var currentConditions = $("<p>");
+      
+        currentConditions.text(weatherDes);
+        temperature.text("Temperature: " + temp +  " F");
+        image.attr(src=dailyicon);
 
-        // currentConditions.text(weatherDes);
-        // temperature.text("Temperature: " + temp +  " F");
-        // image.attr(src=dailyicon);
-
-        // cardDiv.append(image);
-        // cardSection.append(currentConditions);
-        // cardSection.append(temperature);
-        // cardDiv.append(cardSection);
-        // cardDiv.append(cardDivider);
-        // columnDiv.append(cardDiv);
-        // weatherCard.append(columnDiv);
-        // flexContainer.append(weatherCard);
+        cardDiv.append(image);
+        cardSection.append(currentConditions);
+        cardSection.append(temperature);
+        cardDiv.append(cardSection);
+        cardDiv.append(cardDivider);
+        columnDiv.append(cardDiv);
+        weatherCard.append(columnDiv);
+        bigDiv.append(weatherCard);
 
 
 
