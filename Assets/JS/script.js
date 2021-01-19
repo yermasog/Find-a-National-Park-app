@@ -1,17 +1,3 @@
-// var searchterm = "yellowstone";
-// var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + searchterm 
-// + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
-
-// $("testbtn").on("click", function(){
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//       }).then(function(response){
-//         console.log(response);})
-// })
-
-
-
 $(".submit-button").on("click", function (event) {
   // alert("testing")
   event.preventDefault();
@@ -21,8 +7,6 @@ $(".submit-button").on("click", function (event) {
   var searchterm = $(this).attr("id")
   var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm
     + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
-
-
 
   $.ajax({
     url: queryURL,
@@ -41,6 +25,7 @@ $(".submit-button").on("click", function (event) {
       // console.log(description)
       // console.log(url)
       // console.log(photo)
+      // var panel = $("<div class='panel-content'>");
       var section = $(".posts-list");
       var bigDiv = $("<div class='post-item flex-container fullwidth'>");
       var photoDiv = $("<a class='post-thumbnail'>")
@@ -66,6 +51,29 @@ $(".submit-button").on("click", function (event) {
       bigDiv.append(postText);
       //append everything to the main div
       section.append(bigDiv);
+      // panel.append(section);
+
+      // var flex = $("<div class ='post-item flex-container fullwidth'>")
+      var weatherCard = $("<div class='weather-card'>");
+      var columnDiv = $("<div class='small-4 columns'>");
+      var cardDiv = $("<div class='card, style=width: 300px'>");
+      var cardDivider = $("<div class='card-divider'>");
+      var currentWeather = $("<h6>");
+      var image = $("<img>") 
+      var cardSection = $("<div class='card-section'>");
+      var temperature = $("<p>")
+      var currentConditions = $("<p>");
+    
+      
+
+      cardDiv.append(image);
+      cardSection.append(currentConditions);
+      cardSection.append(temperature);
+      cardDiv.append(cardSection);
+      cardDiv.append(cardDivider);
+      columnDiv.append(cardDiv);
+      weatherCard.append(columnDiv);
+      bigDiv.append(weatherCard);
 
       // use the lat and lon from NPS API to feed into open weather API to get weather info
       var lat = response.data[0].latitude;
@@ -87,30 +95,10 @@ $(".submit-button").on("click", function (event) {
         console.log(dailyicon)
         console.log(weatherDes);
 
-      
-        var weatherCard = $("<div class='weather-card'>");
-        var columnDiv = $("<div class='small-4 columns'>");
-        var cardDiv = $("<div class='card, style=width: 300px'>");
-        var cardDivider = $("<div class='card-divider'>");
-        var currentWeather = $("<h6>");
-        var image = $("<img>") 
-        var cardSection = $("<div class='card-section'>");
-        var temperature = $("<p>")
-        var currentConditions = $("<p>");
-      
+        
         currentConditions.text(weatherDes);
         temperature.text("Temperature: " + temp +  " F");
-        image.attr(src=dailyicon);
-
-        cardDiv.append(image);
-        cardSection.append(currentConditions);
-        cardSection.append(temperature);
-        cardDiv.append(cardSection);
-        cardDiv.append(cardDivider);
-        columnDiv.append(cardDiv);
-        weatherCard.append(columnDiv);
-        bigDiv.append(weatherCard);
-
+        image.attr(src = dailyicon);
 
 
 
@@ -121,18 +109,3 @@ $(".submit-button").on("click", function (event) {
   })
 
 })
-
-// jQuery.fn.preventDoubleSubmission = function(){
-//   $(this).on("submit", function(event){
-//     var $form = $(this);
-//     console.log(this);
-
-//     if ($form.data("submitted") === true){
-//       event.preventDefault();
-//     } else {
-//       $form.data("submitted", true);
-//     }
-//   })
-
-//   return this;
-// }
