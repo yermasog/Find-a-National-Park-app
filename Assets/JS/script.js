@@ -98,7 +98,7 @@ console.log(queryURL)
       }).then(function (weather) {
         console.log(weather)
 
-        var temp = weather.main.temp
+        var temp = weather.main.temp.toFixed()
         var icon = weather.weather[0].icon
         var dailyicon = "https://openweathermap.org/img/w/" + icon + ".png"
         var weatherDes = weather.weather[0].description
