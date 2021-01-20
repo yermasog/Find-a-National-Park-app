@@ -3,6 +3,22 @@ body {
   background-color: lightblue;
 }
 
+.grid-container {
+  margin: 10px;
+  padding: 10px;
+}
+.states {
+  text-align: center;
+}
+
+.activities {
+  text-align: center;
+}
+
+.button-group {
+  padding: 1px;
+}
+
 .hero-section {
   background: url("../Images/HeroIMG.jpg") 50% no-repeat;
   background-size: cover;
