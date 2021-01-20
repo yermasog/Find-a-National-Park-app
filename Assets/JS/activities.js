@@ -1,3 +1,4 @@
+
 $(".submit-button").on("click", function (event) {
     event.preventDefault();
 
@@ -7,21 +8,18 @@ $(".submit-button").on("click", function (event) {
     $.ajax({
         url: searchURL,
         method: "GET"
-    }).then(function (activities) { parkCreation(activities) })
+    }).then(function (activities) { parkCreation (activities) })
 
     async function parkCreation(activities) {
         console.log(activities)
 
         for (let i = 0; i < 15; i++) {
 
-            var state = activities.data[0].parks[(0+i)].states
-            console.log(state)
+            var parkcode = activities.data[0].parks[i].parkCode
+            console.log(parkcode)
 
-            var test = activities.data[0].parks[(0+i)].states
-            console.log(test)
-
-            var searchterm = state
-            var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm
+            var searchterm = parkcode
+            var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + searchterm
                 + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
 
             console.log(queryURL)
@@ -30,10 +28,13 @@ $(".submit-button").on("click", function (event) {
                 method: "GET"
             }).then(function (response) {
 
-                var photo = response.data[(0 + i)].images[0].url;
-                var name = response.data[(0 + i)].fullName;
-                var description = response.data[(0 + i)].description;
-                var url = response.data[(0 + i)].directionsUrl;
+                console.log(response)
+                console.log(i)
+                var photo = response.data[0].images[0].url;
+                console.log(photo)
+                var name = response.data[0].fullName;
+                var description = response.data[0].description;
+                var url = response.data[0].directionsUrl;
 
                 // console.log(name)
                 // console.log(description)
@@ -68,28 +69,28 @@ $(".submit-button").on("click", function (event) {
                 // panel.append(section);
 
                 // var flex = $("<div class ='post-item flex-container fullwidth'>")
-                var weatherCard = $("<div class='weather-card'>");
-                var columnDiv = $("<div class='small-4 columns'>");
-                var cardDiv = $("<div class='card'>");
-                var cardDivider = $("<div class='card-divider'>");
-                var currentWeather = $("<h6>");
-                var image = $("<img>")
-                var cardSection = $("<div class='card-section'>");
-                var temperature = $("<p>")
-                var currentConditions = $("<p>");
+                // var weatherCard = $("<div class='weather-card'>");
+                // var columnDiv = $("<div class='small-4 columns'>");
+                // var cardDiv = $("<div class='card'>");
+                // var cardDivider = $("<div class='card-divider'>");
+                // var currentWeather = $("<h6>");
+                // var image = $("<img>")
+                // var cardSection = $("<div class='card-section'>");
+                // var temperature = $("<p>")
+                // var currentConditions = $("<p>");
 
-                currentWeather.text("Current Weather Conditions:")
-                currentWeather.css('font-weight', 'bold');
+                // currentWeather.text("Current Weather Conditions:")
+                // currentWeather.css('font-weight', 'bold');
 
-                cardSection.append(temperature);
-                cardSection.append(image);
-                cardSection.append(currentConditions);
-                cardDivider.append(currentWeather);
-                cardDiv.append(cardDivider);
-                cardDiv.append(cardSection);
-                columnDiv.append(cardDiv);
-                weatherCard.append(columnDiv);
-                bigDiv.append(weatherCard);
+                // cardSection.append(temperature);
+                // cardSection.append(image);
+                // cardSection.append(currentConditions);
+                // cardDivider.append(currentWeather);
+                // cardDiv.append(cardDivider);
+                // cardDiv.append(cardSection);
+                // columnDiv.append(cardDiv);
+                // weatherCard.append(columnDiv);
+                // bigDiv.append(weatherCard);
 
 
 
