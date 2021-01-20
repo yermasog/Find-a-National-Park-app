@@ -1,10 +1,6 @@
-$("#allBtn").on("click", function(){
-  $("#MN").click();
-  $("#WI").click();
-  $("#ND").click();
-  $("#SD").click();
 
-})
+
+
 
 $(".submit-button").on("click", function (event) {
   event.preventDefault();
@@ -15,7 +11,7 @@ $(".submit-button").on("click", function (event) {
   var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + searchterm
     + "&api_key=ntIG3OA71FDbXqFK26t4ABXRfYhcgtL8l5nJ9z8N";
     
-console.log(queryURL)
+// console.log(queryURL)
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -28,11 +24,12 @@ console.log(queryURL)
   section.append(stateDiv);
 
   async function parkCreation (response) {
-    console.log(response);
+    console.log(response.total);
 
     for (let i = 0; i < (response.total); i++) {
-
+      console.log(response.data) 
       var photo = response.data[(0 + i)].images[0].url;
+      
       var name = response.data[(0 + i)].fullName;
       var description = response.data[(0 + i)].description;
       var url = response.data[(0 + i)].directionsUrl;
