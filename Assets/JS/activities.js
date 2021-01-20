@@ -8,7 +8,14 @@ $(".submit-button").on("click", function (event) {
     $.ajax({
         url: searchURL,
         method: "GET"
-    }).then(function (activities) { parkCreation (activities) })
+    }).then(function (activities) { parkCreation(activities) })
+
+
+    var section = $(".posts-list");
+    var activitiesDiv = $("<h1>");
+    var activity = $(this).attr("id");
+    activitiesDiv.text(activity)
+    section.append(activitiesDiv);
 
     async function parkCreation(activities) {
         console.log(activities)

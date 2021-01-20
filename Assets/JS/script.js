@@ -21,6 +21,12 @@ console.log(queryURL)
     method: "GET"
   }).then(function(response){parkCreation(response)})
 
+  var section = $(".posts-list");
+  var stateDiv = $("<h1>");
+  var state = $(this).attr("value");
+  stateDiv.text(state)
+  section.append(stateDiv);
+
   async function parkCreation (response) {
     console.log(response);
 
