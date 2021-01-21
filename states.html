@@ -4,24 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Midwest National Parks</title>
+  <title>U.S. National Parks</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
   <link rel="stylesheet" href="Assets\CSS\style.css">
-  <!-- <script> 
-    document.addEventListener("click", function(e) { 
-        if (e.target.tagName == "A" && 
-                !e.target.hasAttribute("target")) 
-        { 
-            e.target.setAttribute("target", "_blank"); 
-        } 
+  <script>
+    document.addEventListener("click", function (e) {
+      if (e.target.tagName == "A" &&
+        !e.target.hasAttribute("target")) {
+        e.target.setAttribute("target", "_blank");
+      }
     }); 
-</script>  -->
+  </script>
 </head>
 
 
 <body>
-
 
   <div class="hero-section">
     <div class="hero-section-text">
@@ -29,14 +27,17 @@
       <h5>A New Adventure Awaits</h5>
     </div>
   </div>
-  <!-- <div class="row">
-    <div class="small-4 columns"> -->
   <div data-closable="fade-out" class="todo-list-card card">
     <div class="card-divider">
-      <h3>Choose A State To Explore: <a href="activities.html"><h5>Search Activities</h5></a></h3>
+      <h3>Choose A State To Explore: 
+        <a class="k-fix" href="activities.html">
+         <h5> Search Activities</h5>
+        </a>
+      </h3>
     </div>
 
-    <div class="flex-container">
+     
+      <div class="flex-container">
       <div class="stacked button-group">
         <a class="button submit-button" id="AL" value="Alabama">AL</a>
         <a class="button submit-button" id="AK" value="Alaska">AK</a>
@@ -73,7 +74,7 @@
         <a class="button submit-button" id="MO" value="Missouri">MO</a>
       </div>
       <div class="stacked button-group">
-        <a class="button submit-button" id="MT"value="Montana">MT</a>
+        <a class="button submit-button" id="MT" value="Montana">MT</a>
         <a class="button submit-button" id="NE" value="Nebraska">NE</a>
         <a class="button submit-button" id="NV" value="Nevada">NV</a>
         <a class="button submit-button" id="NH" value="New Hampshire">NH</a>
@@ -81,7 +82,7 @@
       </div>
       <div class="stacked button-group">
         <a class="button submit-button" id="NM" value="New Mexico">NM</a>
-        <a class="button submit-button" id= "NY" value="New York">NY</a>
+        <a class="button submit-button" id="NY" value="New York">NY</a>
         <a class="button submit-button" id="NC" value="North Carolina">NC</a>
         <a class="button submit-button" id="ND" value="North Dakota">ND</a>
         <a class="button submit-button" id="OH" value="Ohio">OH</a>
@@ -98,7 +99,7 @@
         <a class="button submit-button" id="TN" value="Tennessee">TN</a>
         <a class="button submit-button" id="TX" value="Texas">TX</a>
         <a class="button submit-button" id="UT" value="Utah">UT</a>
-        <a class="button submit-button" id="VT"  value="Vermont">VT</a>
+        <a class="button submit-button" id="VT" value="Vermont">VT</a>
       </div>
       <div class="stacked button-group">
         <a class="button submit-button" id="VA" value="Virginia">VA</a>
@@ -109,118 +110,33 @@
       </div>
     </div>
 
+    <div class="posts-panel test2">
 
-    <div class="flex-container">
-      <!-- <div class="test">
-        <div class="callout" id="switch-toggle-all">
-          <div class="switch-toggle-wrapper">
-            <div class="switch">
-              <input type="submit" class="button submit-button" id="allBtn" value="Submit">
-            </div>
-            <span>Explore All</span>
+      <!-- Panel's header -->
+      <header class="panel-header">
+        <h1 class="panel-title" style="color:black">On Your Way to Adventure!</h1>
+      </header>
+
+      <!-- Panel's content -->
+      <div class="panel-content">
+        <!-- add state name -->
+        <!-- Posts list -->
+        <section class="posts-list">
+          <div class="post-item flex-container fullwidth">
           </div>
-          <hr />
-
-          <div class="switch-toggle-wrapper">
-            <div class="switch">
-              <input type="submit" class="button submit-button" id="MN" value="Submit">
-              <span class="show-for-sr">Minnesota</span>
-            </input>
-            </div>
-            <span class="pushRight">Minnesota</span>
-          </div>
-
-          <div class="switch-toggle-wrapper">
-            <div class="switch">
-              <input type="submit" class="button submit-button" id="WI" value="Submit">
-              <span class="show-for-sr">Wisconsin</span>
-              </label>
-            </div>
-            <span>Wisconsin</span>
-          </div>
-
-          <div class="switch-toggle-wrapper">
-            <div class="switch">
-              <input type="submit" class="button submit-button" id="ND" value="Submit">
-              <span class="show-for-sr">North Dakota</span>
-              </label>
-            </div>
-            <span>North Dakota</span>
-          </div>
-
-          <div class="switch-toggle-wrapper">
-            <div class="switch">
-              <input type="submit" class="button submit-button" id="SD" value="Submit">
-              <span class="show-for-sr">South Dakota</span>
-              </label>
-            </div>
-            <span>South Dakota</span>
-          </div>
-        </div>
-      </div> -->
-
-      <div class="posts-panel test2">
-
-        <!-- Panel's header -->
-        <header class="panel-header">
-          <h1 class="panel-title" style="color:black">On Your Way to Adventure!</h1>
-        </header>
-
-        <!-- Panel's content -->
-        <div class="panel-content">
-<!-- add state name -->
-          <!-- Posts list -->
-          <section class="posts-list">
-            <div class="post-item flex-container fullwidth">
-              <!-- <a href="#" class="post-thumbnail">
-                <img src="https://static.pexels.com/photos/66274/sunset-poppy-backlight-66274.jpeg" alt="">
-              </a> -->
-              <!-- <div class="post-text"> -->
-                <!-- <a href="#">
-                  <h3 class="post-title">Post title place-holder</h3>
-                </a> -->
-                <!-- <div class="post-meta"> -->
-                  <!-- <span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><a
-                      class="meta-text">Steve Jobs</a></span>
-                  <span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span
-                      class="meta-text">22/06/2030</span></span> -->
-                </div>
-                <!-- <div class="post-summary"> -->
-                  <!-- <p>Your work is going to fill a large part of your life, and the only way to be truly satisfied is to
-                    do
-                    what you believe is great work. And the only way to do great work is to love what you do. If you
-                    haven't
-                    found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you
-                    find
-                    it.... -->
-                    <!-- <a href="#" class="post-read-more">Read more<span class="fa fa-chevron-circle-right"
-                        aria-hidden="true"></span></a> -->
-                  <!-- </p> -->
-                </div>
-              </div>
-              <div class="weather-card flex-container">
-                <div class="small-4 columns">
-                  <div class="card">
-                    <!-- <div class="card-divider"> -->
-                      <!-- <h6> <strong>Current Weather Conditions:</strong></h6> -->
-                    </div>
-                  <!-- <img src=""> -->
-                    <!-- <div class="card-section"> -->
-                      <!-- <p>Temperature:</p>
-                      <p>Humidity:</p>
-                      <p>current conditions</p> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
+        </section>
       </div>
     </div>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="Assets/JS/script.js"></script>
 </body>
-
 </html>
+
+
+
+
+
+  
+
